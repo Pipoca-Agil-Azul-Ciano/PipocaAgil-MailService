@@ -1,6 +1,7 @@
 import Queue from "bull";
 import * as jobs from "../Index";
-
+import dotenv from "dotenv";
+dotenv.config();
 export class JobQueue {
   queues: {
     bull: any;
@@ -13,10 +14,10 @@ export class JobQueue {
     this.queues = Object.values(jobs).map((job) => ({
       bull: new Queue(job.key,{
         redis: {
-          host:'redis-16515.c308.sa-east-1-1.ec2.cloud.redislabs.com',
-          port: 16515,
-          username: "default",
-          password: "X5u0fRg51ZyLHc5FM2MKfZVrT4jWTpnN",
+          host:process.env.REDIS_HOST,
+          port: process.env.REDIS_PORT as unknown as number,
+          username: process.env.REDIS_USER,
+          password: process.env.REDIS_PASS,
           maxRetriesPerRequest: 3
           
         },

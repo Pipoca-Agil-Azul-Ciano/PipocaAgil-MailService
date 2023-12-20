@@ -4,13 +4,14 @@ import Mail from "nodemailer/lib/mailer";
 import dotenv from "dotenv";
 dotenv.config();
 
+
 export class Mailer implements IMailer {
     private transporter: Mail;
 
     constructor() {
         this.transporter = nodemailer.createTransport({
             host: process.env.MAIL_HOST,
-            port: 2525,
+            port: process.env.MAIL_PORT as unknown as number,
             auth: {
                 user: process.env.MAIL_USER,
                 pass: process.env.MAIL_PASS
@@ -20,7 +21,6 @@ export class Mailer implements IMailer {
     }
 
     async sendMail(message: IMessage): Promise<void> {
-        console.log(message)
 
         await this.transporter.sendMail({
             to: {

@@ -1,8 +1,8 @@
 import express from "express";
-import dotenv from "dotenv";
 import cors from "cors";
 import { routes } from "./Routes";
 import { syncTables } from "./Helper/SyncTables/SyncTables";
+import dotenv from "dotenv";
 dotenv.config();
 
 

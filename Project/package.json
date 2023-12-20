@@ -8,7 +8,9 @@
     "start:queue": "tsnd --files --transpile-only --respawn --ignore-watch node_modules src/Queue.ts",
     "build": "tsc",
     "start:docker-deploy": "node Main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy:app": "node build/Main.js",
+    "deploy:queue": "node build/Queue.js",
+    "start:deploy": "npm-run-all -p deploy:app deploy:queue "
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "nodemailer": "^6.9.7",
+    "npm-run-all": "^4.1.5",
     "pg": "^8.11.3"
   },
   "devDependencies": {

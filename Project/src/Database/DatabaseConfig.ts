@@ -1,8 +1,10 @@
 import {Pool} from "pg"
+import dotenv from "dotenv";
+dotenv.config();
 
 export const pool = new Pool({
-    user:'cbtkrjye',
-    port: 5432,
-    host:'silly.db.elephantsql.com',
-    password: 'OERpVZjUT8dxkZi-VvtYkhEYz3W_uozh'
+    user: process.env.DATABASE_USER,
+    port: process.env.DATABASE_PORT as unknown as number,
+    host: process.env.DATABASE_HOST,
+    password: process.env.DATABASE_PASS
 })

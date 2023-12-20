@@ -17,7 +17,6 @@ export class MailUseCases implements IMailUseCases {
         try {
             const mail: Mail = new Mail(sendDTO.userName, sendDTO.userEmail, sendDTO.mailType, sendDTO.bodyParam);
             this.jobQueue.add('SendMail', mail)
-            console.info("useCase")
         } catch {
             throw new InternalErrorException("Erro interno. Tente novamente mais tarde!");
         }
