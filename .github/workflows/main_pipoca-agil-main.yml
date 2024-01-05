@@ -1,4 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+y# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy Node.js app to Azure Web App - pipoca-agil-main
@@ -41,7 +41,7 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-   env:
+    env:
       MAIL_HOST: sandbox.smtp.mailtrap.io
       MAIL_PORT: 2525
       MAIL_USER: b265b5052c2935
