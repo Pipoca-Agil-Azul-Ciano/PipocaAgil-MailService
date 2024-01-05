@@ -61,6 +61,4 @@ jobs:
           package: .
       - name: 'Run npm start:deploy on Azure Web App'
         run: |
-          az webapp restart --name pipoca-agil-main --resource-group pipoca-agil-main_group
-          az webapp log tail --name pipoca-agil-main --resource-group pipoca-agil-main_group
           npm start:deploy
