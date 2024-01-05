@@ -61,4 +61,4 @@ jobs:
           package: .
       - name: 'Run npm start:deploy on Azure Web App'
         run: |
-          npm run start:deploy
+          npm run start:app
