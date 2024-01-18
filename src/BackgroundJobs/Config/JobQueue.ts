@@ -15,11 +15,7 @@ export class JobQueue {
       bull: new Queue(job.key,{
         redis: {
           host:process.env.REDIS_HOST,
-          port: process.env.REDIS_PORT as unknown as number,
-          username: process.env.REDIS_USER,
-          password: process.env.REDIS_PASS,
-          maxRetriesPerRequest: 3
-          
+          port: process.env.REDIS_PORT as unknown as number          
         },
       }),
       name: job.key,
