@@ -15,7 +15,6 @@ routes
     .get('/mail', async (req, res) => {
         const a = new MailRepository();
         const mails = await a.getMails();
-        console.log(mails)
         return res.status(200).json({
             mails
         });

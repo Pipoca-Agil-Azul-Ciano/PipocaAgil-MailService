@@ -9,7 +9,7 @@ class MailRepository {
             await client.query('INSERT INTO mail (username, useremail, sendstatus, mailtype, subject, body) VALUES ($1, $2, $3, $4, $5, $6)', [mail.userName, mail.userEmail, mail.sendStatus, mail.mailType, mail.subject, mail.body]);
         }
         catch (err) {
-            throw new Error('Database Error (error code: MR 15L)');
+            throw new Error('Database Error (error code: MR 15L)' + err);
         }
         finally {
             client.release();

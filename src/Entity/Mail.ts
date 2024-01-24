@@ -22,21 +22,26 @@ export class Mail {
     private bodyConstruction(mailType: MailTypeEnum, bodyParam: string) {
         switch (mailType) {
             case MailTypeEnum.RECOVERYPASSWORD:
-                this.body =`Olá ${this.userName}!
-                <a href="${bodyParam}">Clique Aqui para trocar sua senha</a>`
+                this.body =`
+                <p>Olá <b>${this.userName}</b>!</p>
+                <p>Recebemos uma solicitação para troca de senha em sua conta na Pipoca Ágil. Se você não fez essa solicitação, por favor, ignore este e-mail.</p>
+                <p>Para trocar sua senha, clique no link abaixo:</p>
+                <a href="${bodyParam}">Clique Aqui para trocar sua senha</a>
+                <p>Se o botão acima não funcionar, copie e cole o seguinte link em seu navegador:</p>
+                <a>${bodyParam}</a>
+                <p>brigado por escolher a Pipoca Ágil!</p>
+                <b>Atenciosamente,<br>
+                Equipe de Suporte Pipoca Ágil</b>
+                `
                 break;
 
             case MailTypeEnum.WELCOME:
-                this.body = `Olá ${this.userName}!
-
-    Seja muito bem-vindo ao Pipoca Ágil! Estamos empolgados em tê-lo conosco. Com nossa plataforma ágil, você terá acesso a ferramentas poderosas para impulsionar sua jornada na metodologia ágil.
-
-    Explore nossos recursos, participe de discussões e aproveite ao máximo sua experiência conosco. Estamos aqui para apoiar sua busca por eficiência, inovação e excelência.
-
-    Em caso de dúvidas ou sugestões, não hesite em nos contatar. Estamos ansiosos para ver os excelentes resultados que você alcançará conosco!
-
-    Cumprimentos,
-    Pipoca Ágil Team`
+                this.body = `<p>Olá <b>${this.userName}</b>!</p>
+                <p>Seja muito bem-vindo ao Pipoca Ágil! Estamos empolgados em tê-lo conosco. Com nossa plataforma ágil, você terá acesso a ferramentas poderosas para impulsionar sua jornada na metodologia ágil.</p>
+                <p>Explore nossos recursos, participe de discussões e aproveite ao máximo sua experiência conosco. Estamos aqui para apoiar sua busca por eficiência, inovação e excelência.</p>
+                <p>Em caso de dúvidas ou sugestões, não hesite em nos contatar. Estamos ansiosos para ver os excelentes resultados que você alcançará conosco!</p>
+                <b>Cumprimentos,<br>
+                Pipoca Ágil Team</b>`
     break;
         }
     }

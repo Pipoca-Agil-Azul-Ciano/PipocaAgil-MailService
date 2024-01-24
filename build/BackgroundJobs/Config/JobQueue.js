@@ -37,10 +37,7 @@ class JobQueue {
             bull: new bull_1.default(job.key, {
                 redis: {
                     host: process.env.REDIS_HOST,
-                    port: process.env.REDIS_PORT,
-                    username: process.env.REDIS_USER,
-                    password: process.env.REDIS_PASS,
-                    maxRetriesPerRequest: 3
+                    port: process.env.REDIS_PORT
                 },
             }),
             name: job.key,
