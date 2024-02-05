@@ -25,7 +25,7 @@ export class Mail {
                 this.body =`
                 <p>Olá <b>${this.userName}</b>!</p>
                 <p>Recebemos uma solicitação para troca de senha em sua conta na Pipoca Ágil. Se você não fez essa solicitação, por favor, ignore este e-mail.</p>
-                <span>Sua nova senha é: </span><b>${bodyParam}</b>
+                <span>Sua nova senha é: </span><b>${bodyParam}</b><br><br>
                 <b>Atenciosamente,<br>
                 Equipe de Suporte Pipoca Ágil</b>
                 `
