@@ -21,7 +21,6 @@ export class Mailer implements IMailer {
     }
 
     async sendMail(message: IMessage): Promise<void> {
-
         await this.transporter.sendMail({
             to: {
                 name: message.to.name,
@@ -29,10 +28,10 @@ export class Mailer implements IMailer {
             },
             from: {
                 name: "pipoca Ágil",
-                address: "78a705f929-7b031f+1@inbox.mailtrap.io",
+                address: "contato.azulciano@outlook.com",
             },
             subject: message.subject,
             html: message.body
-        })
+        });
     }
 }
